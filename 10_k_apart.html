@@ -1,0 +1,313 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>The Pragmatic Programmer Tips | 10K Apart Entry</title>
+
+<style type="text/css">
+* + * {
+  margin-top: 1.5em;
+}
+a {
+  color: #AB6F34;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+body {
+  margin: 0px;
+  font-size: 18px;
+  font-family: Georgia,Times,'Times New Roman',serif;
+  background: #36352F;
+  color: #E1DAAE;
+  text-align: center;
+}
+body::before {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(17deg, #36352F, #564F2B);
+}
+nav {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+  z-index: 10;
+}
+nav a {
+  background: #AB6F34;
+  color: #43402d;
+  width: 1.5em;
+  display: inline-block;
+  padding: 0.3em 0.1em;
+  border-radius: 3px;
+  margin-top: 0;
+  margin-bottom: 0.3em;
+  float: right;
+  clear: right;
+}
+nav a:hover,
+nav a:focus {
+  background: #ECA45D;
+  text-decoration: none;
+}
+header {
+  top: 40vh;
+  position: absolute;
+  width: 100%;
+  padding: 0 7%;
+  box-sizing: border-box;
+}
+h1 + p {
+  font-size: 22px;
+  font-style: italic;
+}
+main {
+  max-width: 55em;
+  margin: 0px auto;
+  position: relative;
+}
+ol {
+  padding: 85vh 7% 5em;
+  margin-top: 0px;
+  overflow: auto;
+}
+li {
+  max-width: 20em;
+  clear: both;
+  position: relative;
+  transition: color 0.3s ease;
+  text-align: left;
+  margin-top: 0;
+  padding-top: 2em;
+}
+li:first-of-type {
+  margin-top: -1em;
+}
+li:nth-of-type(2n) {
+  float: right;
+}
+li:hover,
+li:focus {
+  color: white;
+}
+li > p:first-of-type {
+  font-weight: bold;
+}
+main > p:last-child {
+  font-size: 0.8em;
+  margin-bottom: 3em;
+}
+</style>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+// When a 'previous' or 'next' button is clicked,
+// go to it's target, and update both links' targets.
+var current = 0;
+  buttonP = document.getElementById('scrollP'),
+  buttonN = document.getElementById('scrollN');
+
+buttonP.addEventListener('click', function (event) {
+  if (current <= 0) {return false;}
+  if (current == 1) {window.location.href = "#";}
+  else {
+    window.location.href = buttonP.getAttribute("href");
+  }
+  buttonP.setAttribute("href", "#" + (current - 2));
+  buttonN.setAttribute("href", "#" + current);
+  current --;
+  event.preventDefault();
+}, false);
+
+buttonN.addEventListener('click', function (event) {
+  if (current == 40) {return false;}
+  window.location.href = buttonN.getAttribute("href");
+  buttonP.setAttribute("href", "#" + current);
+  buttonN.setAttribute("href", "#" + (current + 2));
+  current ++;
+  event.preventDefault();
+}, false);
+
+});
+</script>
+
+<body>
+<main>
+<nav>
+<a id="scrollP" href="#0">P</a>
+<a id="scrollN" href="#1">N</a>
+</nav>
+<header>
+<h1>The Pragmatic Programmer</h1>
+<p>First 40 tips from the <a href="https://pragprog.com/book/tpp/the-pragmatic-programmer" target="_blank">book</a> by Andrew Hunt &amp; David Thomas</p>
+</header>
+<ol>
+<li id="1">
+  <p>Care About Your Craft</p>
+  <p>Why spend your life developing software unless you care about doing it well?</p>
+</li>
+<li id="2">
+  <p>Think! About Your Work</p>
+  <p>Turn off the autopilot and take control. Constantly critique and appraise your work.</p>
+</li>
+<li id="3">
+  <p>Provide Options, Don't Make Lame Excuses</p>
+  <p>Instead of excuses, provide options. Don't say it can't be done; explain what can be done.</p>
+</li>
+<li id="4">
+  <p>Don't Live with Broken Windows</p>
+  <p>Fix bad designs, wrong decisions, and poor code when you see them.</p>
+</li>
+<li id="5">
+  <p>Be a Catalyst for Change</p>
+  <p>You can't force change on people. Instead, show them how the future might be and help them participate in creating it.</p>
+</li>
+<li id="6">
+  <p>Remember the Big Picture</p>
+  <p>Don't get so engrossed in the details that you forget to check what's happening around you.</p>
+</li>
+<li id="7">
+  <p>Make Quality a Requirements Issue</p>
+  <p>Involve your users in determining the project's real quality requirements.</p>
+</li>
+<li id="8">
+  <p>Invest Regularly in Your Knowledge Portfolio</p>
+  <p>Make learning a habit.</p>
+</li>
+<li id="9">
+  <p>Critically Analyze What You Read and Hear</p>
+  <p>Don't be swayed by vendors, media hype, or dogma. Analyze information in terms of you and your project.
+</li>
+<li id="10">
+  <p>It's Both What You Say and the Way You Say It</p>
+  <p>There's no point in having great ideas if you don't communicate them effectively.</p>
+</li>
+<li id="11">
+  <p><em>DRY</em>&ndash;Don't Repeat Yourself</p>
+  <p>Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.</p>
+</li>
+<li id="12">
+  <p>Make It Easy to Reuse</p>
+  <p>If it's easy to reuse, people will. Create an environment that supports reuse.</p>
+</li>
+<li id="13">
+  <p>Eliminate Effects Between Unrelated Things</p>
+  <p>Design components that are self-contained. independent, and have a single, well-defined purpose.</p>
+</li>
+<li id="14">
+  <p>There Are No Final Decisions</p>
+  <p>No decision is cast in stone. Instead, consider each as being written in the sand at the beach, and 
+</li>
+<li id="15">plan for change.</p>
+  <p>Use Tracer Bullets to Find the Target</p>
+  <p>Tracer bullets let you home in on your target by trying things and seeing how close they land.</p>
+</li>
+<li id="16">
+  <p>Prototype to Learn</p>
+  <p>Prototyping is a learning experience. Its value lies not in the code you produce, but in the lessons you learn.</p>
+</li>
+<li id="17">
+  <p>Program Close to the Problem Domain</p>
+  <p>Design and code in your user's language.</p>
+</li>
+<li id="18">
+  <p>Estimate to Avoid Surprises</p>
+  <p>Estimate before you start. You'll spot potential problems up front.</p>
+</li>
+<li id="19">
+  <p>Iterate the Schedule with the Code</p>
+  <p>Use experience you gain as you implement to refine the project time scales.</p>
+</li>
+<li id="20">
+  <p>Keep Knowledge in Plain Text</p>
+  <p>Plain text won't become obsolete. It helps leverage your work and simplifies debugging and testing.</p>
+</li>
+<li id="21">
+  <p>Use the Power of Command Shells</p>
+  <p>Use the shell when graphical user interfaces don't cut it.</p>
+</li>
+<li id="22">
+  <p>Use a Single Editor Well</p>
+  <p>The editor should be an extension of your hand; make sure your editor is configurable, extensible, and programmable.</p>
+</li>
+<li id="23">
+  <p>Always Use Source Code Control</p>
+  <p>Source code control is a time machine for your work&mdash;you can go back.</p>
+</li>
+<li id="24">
+  <p>Fix the Problem, Not the Blame</p>
+  <p>It doesn't really matter whether the bug is your fault or someone else's&mdash;it is still your problem, and it still needs to be fixed.</p>
+</li>
+<li id="25">
+  <p>Don't Panic When Debugging</p>
+  <p>Take a deep breath and THINK! about what could be causing the bug.</p>
+</li>
+<li id="26">
+  <p>"select" Isn't Broken.</p>
+  <p>It is rare to find a bug in the OS or the compiler, or even a third-party product or library. The bug is most likely in the application.</p>
+</li>
+<li id="27">
+  <p>Don't Assume It&mdash;Prove It</p>
+  <p>Prove your assumptions in the actual environment&mdash;with real data and boundary conditions.</p>
+</li>
+<li id="28">
+  <p>Learn a Text Manipulation Language.</p>
+  <p>You spend a large part of each day working with text. Why not have the computer do some of it for you?</p>
+</li>
+<li id="29">
+  <p>Write Code That Writes Code</p>
+  <p>Code generators increase your productivity and help avoid duplication.</p>
+</li>
+<li id="30">
+  <p>You Can't Write Perfect Software</p>
+  <p>Software can't be perfect. Protect your code and users from the inevitable errors.</p>
+</li>
+<li id="31">
+  <p>Design with Contracts</p>
+  <p>Use contracts to document and verify that code does no more and no less than it claims to do.</p>
+</li>
+<li id="32">
+  <p>Crash Early</p>
+  <p>A dead program normally does a lot less damage than a crippled one.</p>
+</li>
+<li id="33">
+  <p>Use Assertions to Prevent the Impossible</p>
+  <p>Assertions validate your assumptions. Use them to protect your code from an uncertain world.</p>
+</li>
+<li id="34">
+  <p>Use Exceptions for Exceptional Problems</p>
+  <p>Exceptions can suffer from all the readability and maintainability problems of classic spaghetti code. Reserve exceptions for exceptional things.</p>
+</li>
+<li id="35">
+  <p>Finish What You Start</p>
+  <p>Where possible, the routine or object that allocates a resource should be responsible for deallocating it.</p>
+</li>
+<li id="36">
+  <p>Minimize Coupling Between Modules</p>
+  <p>Avoid coupling by writing "shy" code and applying the Law of Demeter.</p>
+</li>
+<li id="37">
+  <p>Configure, Don't Integrate</p>
+  <p>Implement technology choices for an application as configuration options, not through integration or engineering.</p>
+</li>
+<li id="38">
+  <p>Put Abstractions in Code, Details in Metadata</p>
+  <p>Program for the general case, and put the specifics outside the compiled code base.</p>
+</li>
+<li id="39">
+  <p>Analyze Workflow to Improve Concurrency</p>
+  <p>Exploit concurrency in your user's workflow.</p>
+</li>
+<li id="40">
+  <p>Design Using Services</p>
+  <p>Design in terms of <em>services</em>&mdash;independent, concurrent objects behind well-defined, consistent interfaces.</p>
+</li>
+</ol>
+<p>Get <a href="https://pragprog.com/book/tpp/the-pragmatic-programmer" target="_blank">The Pragmatic Programmer</a> book.</p>
+</main>
+</body>
